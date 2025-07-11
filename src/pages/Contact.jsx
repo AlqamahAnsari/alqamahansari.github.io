@@ -22,7 +22,7 @@ export default function Contact() {
           <Mail className="w-6 h-6" />
         </a>
         <a
-          href="https://github.com/AlquamahAnsari"
+          href="https://github.com/AlqamahAnsari"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-indigo-500 dark:hover:text-indigo-400 transition"
@@ -40,7 +40,7 @@ export default function Contact() {
           <Linkedin className="w-6 h-6" />
         </a>
         <a
-          href="https://x.com/yourusername"
+          href="https://x.com/AlqamahAnsari"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-indigo-500 dark:hover:text-indigo-400 transition"
