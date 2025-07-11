@@ -21,8 +21,8 @@ export default function Home() {
             View Projects
           </a>
           <a
-            href="/Resume_Alquamah_Ansari.pdf"
-            download="Resume_Mohammad_Alquamah_Ansari"
+            href="/Mohammad-Alquamah-Ansari-Resume.pdf"
+            download="Mohammad-Alquamah-Ansari-Resume"
             className="inline-block bg-white text-indigo-600 border border-indigo-600 px-6 py-3 rounded hover:bg-indigo-50 dark:bg-gray-800 dark:text-indigo-400 dark:border-indigo-400 dark:hover:bg-gray-700 transition"
           >
             Download Resume

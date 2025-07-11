@@ -22,7 +22,7 @@ export default function Contact() {
           <Mail className="w-6 h-6" />
         </a>
         <a
-          href="https://github.com/Alquamahansari"
+          href="https://github.com/AlquamahAnsari"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-indigo-500 dark:hover:text-indigo-400 transition"
@@ -31,13 +31,29 @@ export default function Contact() {
           <Github className="w-6 h-6" />
         </a>
         <a
-          href="https://www.linkedin.com/in/Mohammad-Alquamah-Ansari"
+          href="https://www.linkedin.com/in/alqamahansari"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-indigo-500 dark:hover:text-indigo-400 transition"
           title="LinkedIn"
         >
           <Linkedin className="w-6 h-6" />
+        </a>
+        <a
+          href="https://x.com/yourusername"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-indigo-500 dark:hover:text-indigo-400 transition"
+          title="X (Twitter)"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-6 h-6"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M18.36 3H21L14.44 10.68 22.5 21h-6.57l-5.12-6.75L4.5 21H2l7.06-8.02L1.5 3h6.69l4.67 6.07L18.36 3ZM17.19 19h1.36l-4.67-6.2-1.08 1.24L17.19 19ZM5.45 5h-1.4l4.67 6.2 1.09-1.24L5.45 5Z" />
+          </svg>
         </a>
       </div>
     </section>
