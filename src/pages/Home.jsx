@@ -2,10 +2,12 @@ import React from 'react';
 
 export default function Home() {
   return (
-    <section
+   <section
       id="home"
       className="min-h-screen px-6 py-20 bg-gray-100 dark:bg-gray-900 flex flex-col md:flex-row items-center justify-center text-center md:text-left gap-10"
     >
+
+
       <div className="max-w-xl">
         <h1 className="text-5xl font-bold text-indigo-600 dark:text-indigo-400 mb-4">
           Hi, I'm Mohammad Alquamah Ansari
@@ -31,11 +33,16 @@ export default function Home() {
       </div>
 
       <div>
-        <img
-          src="/profile.jpg" // replace with your photo URL
-          alt="Mohammad Alquamah Ansari"
-          className="w-48 h-48 rounded-full object-cover shadow-lg"
-        />
+       <img
+  src="/profile.jpg"
+  alt="Mohammad Alquamah Ansari"
+  className="w-52 h-52 rounded-full object-cover shadow-lg ring-2 ring-indigo-500 object-top"
+/>
+
+
+
+
+
       </div>
     </section>
   );
