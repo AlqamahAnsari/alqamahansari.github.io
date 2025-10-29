@@ -1,49 +1,72 @@
-import React from 'react';
+import React from "react";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-   <section
+    <section
       id="home"
-      className="min-h-screen px-6 py-20 bg-gray-100 dark:bg-gray-900 flex flex-col md:flex-row items-center justify-center text-center md:text-left gap-10"
+      className="min-h-screen flex flex-col items-center justify-center px-6 py-20 bg-gray-100 dark:bg-gray-900 text-center"
     >
-
-
-      <div className="max-w-xl">
-        <h1 className="text-5xl font-bold text-indigo-600 dark:text-indigo-400 mb-4">
+      <motion.div
+        className="max-w-3xl"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <motion.h1
+          className="text-5xl font-bold text-indigo-600 dark:text-indigo-400 mb-6"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           Hi, I'm Mohammad Alquamah Ansari
-        </h1>
-        <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mb-6">
-          Final-year B.Sc. AI student | MERN Developer | Power BI Analyst | Python & ML Enthusiast
-        </p>
-        <div className="space-x-4">
+        </motion.h1>
+
+        <motion.p
+          className="text-lg text-gray-700 dark:text-gray-300 mb-6"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          B.Sc Artificial Intelligence | LLM | DevOps | Ethical AI
+        </motion.p>
+
+        <motion.p
+          className="italic text-gray-600 dark:text-gray-400 mb-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          “Striving to create AI that aligns intelligence with ethics and impact.”
+        </motion.p>
+
+        <motion.div
+          className="space-x-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.7 }}
+          viewport={{ once: true }}
+        >
           <a
             href="#projects"
-            className="inline-block bg-indigo-600 text-white px-6 py-3 rounded hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition"
+            className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:scale-105 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-all duration-300 shadow-md"
           >
             View Projects
           </a>
+
           <a
             href="/Mohammad-Alquamah-Ansari-Resume.pdf"
             download="Mohammad-Alquamah-Ansari-Resume"
-            className="inline-block bg-white text-indigo-600 border border-indigo-600 px-6 py-3 rounded hover:bg-indigo-50 dark:bg-gray-800 dark:text-indigo-400 dark:border-indigo-400 dark:hover:bg-gray-700 transition"
+            className="inline-block bg-white text-indigo-600 border border-indigo-600 px-6 py-3 rounded-lg hover:scale-105 hover:bg-indigo-50 dark:bg-gray-800 dark:text-indigo-400 dark:border-indigo-400 dark:hover:bg-gray-700 transition-all duration-300 shadow-md"
           >
             Download Resume
           </a>
-        </div>
-      </div>
-
-      <div>
-       <img
-  src="/profile.jpg"
-  alt="Mohammad Alquamah Ansari"
-  className="w-52 h-52 rounded-full object-cover shadow-lg ring-2 ring-indigo-500 object-top"
-/>
-
-
-
-
-
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
