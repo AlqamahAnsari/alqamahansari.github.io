@@ -1,23 +1,31 @@
-export default function ProjectCard({ title, description, link, image }) {
+// src/components/ProjectCard.jsx
+import React from "react";
+
+export default function ProjectCard({ title, description, tech = [], repo, image, imageAlt }) {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition p-4">
-      {image && (
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-48 object-cover rounded-md mb-4"
-        />
-      )}
-      <h3 className="text-xl font-semibold text-indigo-600 dark:text-indigo-400 mb-2">{title}</h3>
-      <p className="text-gray-700 dark:text-gray-300 mb-4">{description}</p>
-      <a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white px-4 py-2 rounded transition"
-      >
-        View Project
-      </a>
-    </div>
+    <article className="border rounded-lg p-5 bg-white shadow-sm hover:shadow-md transition">
+      {image ? (
+        <div className="mb-4 overflow-hidden rounded">
+          <img src={image} alt={imageAlt || title} className="object-cover w-full h-40" />
+        </div>
+      ) : null}
+
+      <h3 className="text-xl font-semibold mb-1">{title}</h3>
+      <p className="text-sm text-slate-600 mb-3">{description}</p>
+
+      <div className="flex flex-wrap gap-2 mb-4">
+        {tech.map((t) => (
+          <span key={t} className="bg-blue-100 text-black px-3 py-1 rounded-full text-xs">{t}</span>
+        ))}
+      </div>
+
+      <div className="flex items-center gap-4">
+        {repo ? (
+          <a href={repo} target="_blank" rel="noopener noreferrer" className="text-indigo-600 underline">View Code</a>
+        ) : (
+          <span className="text-sm text-slate-400">No repo</span>
+        )}
+      </div>
+    </article>
   );
 }

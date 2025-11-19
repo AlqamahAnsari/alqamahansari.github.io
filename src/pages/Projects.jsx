@@ -1,58 +1,99 @@
-import ProjectCard from "../components/ProjectCard";
-import { motion } from "framer-motion";
+// src/pages/Projects.jsx
+import React from "react";
+import { Link } from "react-router-dom";
+
+const allProjects = [
+  {
+    id: "house-price",
+    title: "House Price Prediction App",
+    short: "Regression + web UI to predict house prices.",
+    details:
+      "End-to-end regression pipeline with feature engineering, XGBoost model, evaluation notebooks and Flask deployment.",
+    tech: ["Python", "XGBoost", "Flask", "Pandas"],
+    repo: "https://github.com/alqamahansari/house-price-prediction",
+    caseStudy: "#",
+  },
+  {
+    id: "emotion-detection",
+    title: "Emotion Detection System",
+    short: "Emotion detection from speech and facial expressions.",
+    details:
+      "Multimodal ML system combining audio and vision pipelines to classify emotional state; includes preprocessing, model training and evaluation scripts.",
+    tech: ["Python", "TensorFlow", "OpenCV", "Librosa"],
+    repo: "https://github.com/alqamahansari/Emotion-Detection-System",
+    caseStudy: "#",
+  },
+  {
+    id: "atmos",
+    title: "Atmos",
+    short: "Real-time weather forecasting web app.",
+    details:
+      "Front-end app using OpenWeather API for dynamic visualizations, location-based insights and responsive UI.",
+    tech: ["HTML", "CSS", "JavaScript", "OpenWeather API"],
+    repo: "https://github.com/alqamahansari/atmos",
+    caseStudy: "#",
+  },
+  {
+    id: "ai-career",
+    title: "AI-Powered Career Learning Platform (Ongoing)",
+    short: "Multi-track AI-driven learning platform with LLM-powered mentoring and adaptive assessments.",
+    details:
+      "A purpose-driven platform that personalizes career growth through staged learning paths, LLM mentoring, and job/academic recommendations.",
+    tech: ["React", "Node.js", "LLMs", "Python"],
+    repo: "https://github.com/AlqamahAnsari/AI-Career-Learning-Platform",
+    caseStudy: "#",
+  },
+];
 
 export default function Projects() {
-  const projectList = [
-    {
-    title: "AI-Powered Career Learning Platform (Ongoing)",
-    description:
-      "A multi-track AI-driven learning platform that personalizes career growth through LLM-powered mentoring, adaptive assessments.",
-    link: "https://github.com/AlquamahAnsari/AI-Career-Learning-Platform",
-    image: "/ai-career-platform.png",
-    },
-    {
-    title: "Atmos",
-    description:
-      "Atmos, a real-time weather forecasting web app using HTML, CSS, JavaScript and OpenWeather API, providing dynamic visualizations and location-based insights.",
-    link: "https://github.com/AlqamahAnsari/atmos",
-    image: "/weather.png",
-    },
-    {
-    title: "House Price Prediction App",
-    description:
-      "A regression-based ML web app that predicts house prices using real-world data and feature engineering, demonstrating end-to-end model deployment skills.",
-    link: "https://github.com/AlqamahAnsari/house-price-prediction",
-    image: "/house.png",
-    },
-    {
-      title: "Emotion Detection System",
-      description: "A machine learning system to detect emotions from speech and facial expressions.",
-      link: "https://github.com/Alquamahansari/Emotion-Detection-System",
-      image: "/Emotion Detection System.png",
-      imageAlt: "Emotion Detection System Screenshot",
-    },
-  ];
+  // ✅ Scroll to top when page loads
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
-    <section
-      id="projects"
-      className="min-h-screen px-6 py-20 bg-gray-100 dark:bg-gray-900 text-center"
-    >
-      <h2 className="text-4xl font-bold text-indigo-600 dark:text-indigo-400 mb-10">
-        Projects
-      </h2>
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        {projectList.map((project, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
+    <main className="pt-24 pb-16 max-w-4xl mx-auto px-6 text-center">
+      
+      {/* HEADER */}
+      <header className="mb-10">
+        <h1 className="text-4xl font-bold text-black">All Projects</h1>
+      </header>
+
+      {/* STACKED PROJECT CARDS */}
+      <div className="flex flex-col gap-8 items-center">
+        {allProjects.map((p) => (
+          <article
+            key={p.id}
+            className="border rounded-lg p-6 bg-white shadow hover:shadow-lg transition-shadow text-left w-full"
           >
-            <ProjectCard {...project} />
-          </motion.div>
+            <h3 className="text-2xl font-bold text-black mb-2">{p.title}</h3>
+
+            <p className="text-slate-700 mb-2">{p.short}</p>
+            <p className="text-slate-700 mb-4">{p.details}</p>
+
+            <div className="flex flex-wrap gap-2 mb-4">
+              {p.tech.map((t) => (
+                <span
+                  key={t}
+                  className="bg-blue-100 text-black px-3 py-1 rounded-full text-sm"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+
+            <a
+              href={p.repo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 underline"
+            >
+              View Code
+            </a>
+          </article>
         ))}
       </div>
-    </section>
+
+    </main>
   );
 }
