@@ -1,4 +1,4 @@
-# Alquamah Ansari – Personal Portfolio
+# Mohammad Alquamah Ansari – Personal Portfolio
 
 Welcome to my personal portfolio website! This repository hosts the source code for my digital presence, showcasing my journey, projects, and aspirations in Artificial Intelligence and ethical AI research.
 
